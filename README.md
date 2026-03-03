@@ -38,7 +38,7 @@ TRAX helps users discover 200+ sports facilities across 50+ parks — basketball
 
 - **Interactive Map** — Custom-styled Google Maps with emoji-based markers, clustering at zoom levels, and animated home location indicator
 - **Smart Filtering** — Filter by 15+ activity types (basketball, tennis, pickleball, soccer, volleyball, golf, swimming, biking, fishing, kayaking, etc.) with real-time marker updates
-- **AI-Enhanced Details** — Facility descriptions enriched by Gemini 1.5 Flash, extracting court counts, surface types, lighting, and hours from park district websites
+- **AI-Enhanced Details** — Facility descriptions enriched by Gemini 3 Flash, extracting court counts, surface types, lighting, and hours from park district websites
 - **Address Search** — OpenStreetMap Nominatim geocoding (zero API cost)
 - **Multiple Map Themes** — 4 custom map styles including City View, Adventure, and Illustrated
 - **Platform-Adaptive** — Google Maps on Android/Web, Apple Maps option on iOS
@@ -77,7 +77,7 @@ TRAX helps users discover 200+ sports facilities across 50+ parks — basketball
         ▼                ▼                ▼
   ┌──────────┐   ┌──────────────┐  ┌──────────────┐
   │ Supabase │   │ OpenStreetMap│  │   Gemini AI  │
-  │ (PostGIS)│   │  Nominatim   │  │  1.5 Flash   │
+  │ (PostGIS)│   │  Nominatim   │  │  3 Flash     │
   │ Database │   │  Geocoding   │  │  Enhancement │
   └──────────┘   └──────────────┘  └──────────────┘
 ```
@@ -91,7 +91,7 @@ TRAX helps users discover 200+ sports facilities across 50+ parks — basketball
 | **Maps** | Google Maps Flutter / Apple Maps | Platform-native rendering |
 | **Database** | Supabase + PostGIS | Geospatial queries with `ST_DWithin` proximity search |
 | **Geocoding** | OpenStreetMap Nominatim | Free, accurate for US addresses |
-| **AI** | Gemini 1.5 Flash | $0.0003/park for facility detail extraction |
+| **AI** | Gemini 3 Flash | $0.0003/park for facility detail extraction |
 | **Scraping** | Crawl4AI | Free web scraping for park district data |
 | **Deploy** | Vercel (web), Xcode (iOS) | Static hosting with SPA routing |
 
@@ -101,7 +101,7 @@ Activity data is sourced and enriched through a multi-stage pipeline:
 
 1. **Collection** — OpenStreetMap exports + Google Maps metadata for initial facility locations
 2. **Web Scraping** — Crawl4AI scrapes 6 sources per park simultaneously (park district sites, Pickleheads, Yelp, etc.)
-3. **AI Enhancement** — Gemini 1.5 Flash analyzes scraped content to extract facility counts, surface types, hours, lighting, and amenities
+3. **AI Enhancement** — Gemini 3 Flash analyzes scraped content to extract facility counts, surface types, hours, lighting, and amenities
 4. **Deduplication** — Smart matching algorithm prevents duplicate entries using name similarity + coordinate proximity
 5. **Storage** — Enriched data stored in Supabase with PostGIS POINT geometry for spatial indexing
 
