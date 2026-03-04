@@ -19,7 +19,7 @@
   &nbsp;&nbsp;
   <img src="screenshots/map_activities.png" width="230" alt="Map with Activities" />
   &nbsp;&nbsp;
-  <img src="screenshots/map_filtered.png" width="230" alt="Filtered Map View" />
+  <img src="screenshots/map_filtered.png" width="230" alt="Explore Activities" />
 </p>
 
 <br />
